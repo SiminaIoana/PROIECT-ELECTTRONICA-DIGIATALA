@@ -1,0 +1,96 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 01/09/2024 10:21:29 PM
+-- Design Name: 
+-- Module Name: timer0 - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_unsigned.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity timer0 is
+    
+    Port 
+            (  
+            clk_in : in std_logic;     -- clock ul placii
+            EN: in std_logic;           -- enable
+            btnClkEx: in std_logic;    -- clock extern
+            btn_reset: in std_logic;  -- buton reset
+            sel_clk: in std_logic;    -- clock selectie
+            TMRIF: out std_logic;     -- flag
+            TMR0 : out std_logic_vector (7 downto 0)    -- registru pe 8 biti
+            
+            );
+    
+end timer0;
+
+architecture Behavioral of timer0 is
+     signal TMR0_v: std_logic_vector(7 downto 0);               -- registru pt afisare
+     signal TMRIF_flag: std_logic := '0';        -- semnalul de flag
+     --signal temp_data : STD_LOGIC_VECTOR(7 downto 0);     -- stocare valori temporare
+
+begin
+      
+    
+     process(clk_in, btnClkEx, btn_reset)     -- numarator
+             variable n : integer range 0 to 1000000000;
+             --variable c : integer range 0 to 300;
+     begin             
+      
+    if btn_reset='1' then
+        TMR0_v <= (others=>'0');
+        TMRIF_flag <= '0';
+        n := 0;
+    elsif (clk_in' event and clk_in='1') then
+        if n = 50000000 then
+            --TMRIF_flag <= '1' when TMR0_v = (others => '1') ;
+            TMR0_v <= TMR0_v + 1;
+            
+            if TMR0_v = "11111111" then
+                TMRIF_flag <= '1';
+            end if;
+            
+            n := 0;
+            
+        else
+            n := n + 1;
+        end if;
+        
+        --if c = 255 then 
+           -- TMRIF_flag <= '1';
+       -- end if;
+        
+    end if;
+            
+      end process;
+      
+      TMR0<= TMR0_v;
+      TMRIF <= TMRIF_flag;
+      
+end Behavioral;
+ 

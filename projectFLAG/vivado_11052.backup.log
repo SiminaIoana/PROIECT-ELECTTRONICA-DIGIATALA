@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Jan 12 23:29:07 2024
+# Process ID: 11052
+# Current directory: C:/Users/Vasile/Desktop/projectFLAG
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6044 C:\Users\Vasile\Desktop\projectFLAG\projectFLAG.xpr
+# Log file: C:/Users/Vasile/Desktop/projectFLAG/vivado.log
+# Journal file: C:/Users/Vasile/Desktop/projectFLAG\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Vasile/Desktop/projectFLAG/projectFLAG.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programe/VivadoXlinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:34 ; elapsed = 00:00:13 . Memory (MB): peak = 803.441 ; gain = 167.473
+update_compile_order -fileset sources_1
+open_project C:/Users/Vasile/Desktop/EDproject_v2/EDproject_v2.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programe/VivadoXlinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 879.141 ; gain = 42.969
+update_compile_order -fileset sources_1
+current_project projectFLAG
+launch_runs synth_1 -jobs 6
+[Fri Jan 12 23:36:09 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Vasile/Desktop/projectFLAG/projectFLAG.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 6
+[Fri Jan 12 23:37:00 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Vasile/Desktop/projectFLAG/projectFLAG.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Fri Jan 12 23:38:44 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Vasile/Desktop/projectFLAG/projectFLAG.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2818CA
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A2818CA.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A2818CA
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2818CA
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183A2818CA.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+current_project EDproject_v2
+close_project
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+[Fri Jan 12 23:41:18 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Vasile/Desktop/projectFLAG/projectFLAG.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 6
+[Fri Jan 12 23:41:55 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Vasile/Desktop/projectFLAG/projectFLAG.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Fri Jan 12 23:43:10 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Vasile/Desktop/projectFLAG/projectFLAG.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 12 23:44:25 2024...
